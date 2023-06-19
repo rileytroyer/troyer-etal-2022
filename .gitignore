@@ -1,0 +1,8 @@
+**/.ipynb_checkpoints/
+.DS_Store
+*.log
+data/
+**/archived/
+logs/
+**/__pycache__/
+reports/figures/
