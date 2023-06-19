@@ -1,5 +1,6 @@
 # Read Me File for PFISR Pulsating Aurora Energy Project
 see document-struture.md for a layout of the project structure and where files are located
+you will need to create reports/figures/, logs/, and data/ directories as these are included in my .gitignore file.
 
 ## Setup
 1. When running code make sure you are in the base directory /pfisr-energy as this will ensure that all the code runs as expected.
