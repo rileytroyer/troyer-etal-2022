@@ -163,7 +163,7 @@ def isr_ion_production_rate(e_density:np.ndarray, de_density:np.ndarray,
     E-region and is extended to D-region. Gledhill 1986 is slightly more
     sophisticated using a best fit of many D-region measurements during
     night time aurora. Osepian 2009 is based on measurements during 
-    solar proton events. The Stanford model is based on the chemistry
+    solar proton events. The Stanford (GPI+) model is based on the chemistry
     model of Lehtinen 2007. 
     INPUT
     e_density - electron density from pfisr radar
@@ -174,7 +174,7 @@ def isr_ion_production_rate(e_density:np.ndarray, de_density:np.ndarray,
     unix_time - unix time for chemistry model code
     pfrr_lat, pfrr_lon - latitude and longitude of instrument
     alpha_type - what recombination coefficient to use
-                other option: vickrey, osepian, gledhill, stanford
+                other option: vickrey, osepian, gledhill, gpi+
     base_dir - how to get to the base project directory
     OUTPUT
     q_estimate - estimated ion production rate m^-2 s^-1
@@ -215,7 +215,7 @@ def isr_ion_production_rate(e_density:np.ndarray, de_density:np.ndarray,
                        * pfisr_error_interp(altitude_bins))
         dq_estimate = abs(dq_estimate)
     
-    elif alpha_type=='stanford':
+    elif alpha_type=='gpi+':
         # Read in the chemistry class
         chem = chemistry(SteadyStateTime = 100., ISRIntegrationTime = 60.)
 

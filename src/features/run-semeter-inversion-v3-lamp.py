@@ -356,7 +356,7 @@ def isr_ion_production_rate(slice_n, alpha_type='vickrey'):
     E-region and is extended to D-region. Gledhill 1986 is slightly more
     sophisticated using a best fit of many D-region measurements during
     night time aurora. Osepian 2009 is based on measurements during 
-    solar proton events. The Stanford model is based on the chemistry
+    solar proton events. The Stanford (GPI+) model is based on the chemistry
     model of Lehtinen 2007. 
     INPUT
     slice_n
@@ -365,7 +365,7 @@ def isr_ion_production_rate(slice_n, alpha_type='vickrey'):
     alpha_type = 'vickrey'
         type: string
         about: what recombination coefficient to use
-                other option: osepian, gledhill, stanford
+                other option: osepian, gledhill, gpi+
     OUTPUT
     q_estimate
         type: array of float
@@ -410,7 +410,7 @@ def isr_ion_production_rate(slice_n, alpha_type='vickrey'):
                        * pfisr_error_interp(altitude_bins))
         dq_estimate = abs(dq_estimate)
     
-    elif alpha_type=='stanford':
+    elif alpha_type=='gpi+':
         # Read in the chemistry class
         chem = chemistry(SteadyStateTime = 100., ISRIntegrationTime = 60.)
 
@@ -900,7 +900,7 @@ pa_dates = np.array([dt.strptime(d, '%Y-%m-%d').date() for d
 # In[5]:
 
 
-for alpha_type in ['stanford']:
+for alpha_type in ['gpi+']:
     
     print('Starting:', alpha_type)
     

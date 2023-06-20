@@ -10,9 +10,11 @@ from datetime import datetime
 import logging
 import numpy as np
 import os
+from pathlib import Path
 import pickle
 from scipy.interpolate import interp1d
 import subprocess
+import sys
 
 # Disable divide by zero numpy warnings
 np.seterr(divide='ignore')
@@ -29,6 +31,11 @@ logging.basicConfig(filename = f'logs/run-semeter-inversion-{datetime.today().da
 
 
 ####################### Custom Functions to Import #######################
+
+# Add root to path
+path_root = Path(__file__).parents[2]
+sys.path.append(str(path_root))
+
 # Function to read in PFISR data
 from src.data.pfisr_functions import get_isr_data
 
@@ -178,7 +185,7 @@ pa_database = pa_database[1:, :]
 pa_dates = np.array([datetime.strptime(d, '%Y-%m-%d').date() for d 
                      in pa_database[:, 0]])
 
-for alpha_type in ['stanford','vickrey','osepian','gledhill']:
+for alpha_type in ['gpi+','vickrey','osepian','gledhill']:
     
     logging.info(f'Starting: {alpha_type}')
     
