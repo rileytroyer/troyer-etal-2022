@@ -17,6 +17,7 @@ If you are running this for the first time you will want to download the data
     - Store the processed images in an hdf5 (.h5) file.
 2. Run the code in /src/data/features/create-movies-pfrr-asi.py
     - This will create a timestamped movie using the .h5 files.
+    - Requires FFMPEG to be installed `sudo apt install ffmpeg`
 
 ### Poker Flat Incoherent Scatter Radar Data (PFISR)
 This data is located in the AMISR repository: https://data.amisr.com/database/pfisr/level2/nenotr/

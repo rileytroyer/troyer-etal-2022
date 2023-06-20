@@ -14,9 +14,8 @@ import logging
 from pfrr_asi_visual_functions import create_timestamped_movie
 
 # Important directories
-project_dir = '/data/projects/new-project-structure/pfisr-energy/'
-data_dir = project_dir + 'data/'
-logs_dir = project_dir + 'logs/'
+data_dir =  'data/'
+logs_dir = 'logs/'
 
 # Initiate logging
 logging.basicConfig(filename=logs_dir + f'create-movie-pfrr-asi-{datetime.today().date()}.log',
@@ -37,13 +36,13 @@ days_list = [d.to_pydatetime().date() for d in days_list]
 # Loop through each day, download, and create .h5 file
 logging.info('Starting to create movies for all days.')
 
-for day in days_list[0:2]:
+for day in days_list[0:1]:
     
     try: 
         # Download the images to the raw directory
         create_timestamped_movie(day, img_base_dir=data_dir+'interim/pfrr-asi-h5/', 
                                  save_base_dir=data_dir+'processed/pfrr-asi-movies/')
     except Exception as e:
-        logging.critical(f'Unable to create movie for {day.date()}. Stopped with error {e}')
+        logging.critical(f'Unable to create movie for {day}. Stopped with error {e}')
 
 logging.info('Finished creating movies for all days.')

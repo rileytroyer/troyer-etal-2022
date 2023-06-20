@@ -5,6 +5,7 @@ Functions used to visualize PFRR ASI Images such as creating movies
 """
 
 from datetime import datetime
+from dateutil import parser
 import h5py
 import logging
 from matplotlib import animation
@@ -32,7 +33,7 @@ def create_timestamped_movie(date:datetime.date, img_base_dir:str, save_base_dir
     pfrr_file = h5py.File(img_file, "r")
 
     # Get times from file
-    all_times = [datetime.fromtimestamp(d) for d in pfrr_file['timestamps']]
+    all_times = [parser.isoparse(d) for d in pfrr_file['iso_ut_time']]
 
     # Get all the images too
     all_images = pfrr_file['images']
