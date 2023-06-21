@@ -1,7 +1,7 @@
 """
 Script to perform an energy inversion as per Semeter, Kamalabadi 2005 for PFISR data for specified number of days
 
-Written by Riley Troyer
+@author Riley Troyer
 science@rileytroyer.com
 """
 ####################### Initialize Program #######################
