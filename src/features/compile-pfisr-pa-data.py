@@ -73,7 +73,7 @@ for ae_file in ae_files:
 logging.info('AE files read in.')
         
 # Read in AL index files
-al_files = sorted(os.listdir('data/raw/indices/ae/'))
+al_files = sorted(os.listdir('data/raw/indices/al/'))
 al_files = sorted([f for f in al_files if not f.startswith('.')])
 
 # Save indices in dictionary
@@ -83,7 +83,7 @@ al_indices = {}
 for al_file in al_files:
     
     # Read in file
-    al_data = np.loadtxt('data/raw/indices/ae/' + al_file,
+    al_data = np.loadtxt('data/raw/indices/al/' + al_file,
                          dtype='str', skiprows=1)
 
     # Parse datetime from file

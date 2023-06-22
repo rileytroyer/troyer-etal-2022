@@ -54,3 +54,9 @@ To reproduce the figures in the paper you will want to run the following noteboo
 - notebooks/reports/plotting-raw-inversion-results-ae.ipynb
 
 Make note of the high and low energy values for each bin in each notebook. I then enter these numbers into data/processed/chemistry-model-results.xlsx
+
+Running the notebook notebooks/reports/inversion-results/paper-plots.ipynb will create the energy inversion figures in the paper.
+
+Running the notebook notebooks/reports/plot-scatter-plots-for-paper.ipynb will create the scatter plots in the paper.
+
+Running the notebook notebooks/reports/plot-high-energy-timescale-paper.ipynb will create the timescale plot from the paper.
