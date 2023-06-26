@@ -1,7 +1,7 @@
 **/.ipynb_checkpoints/
 .DS_Store
 *.log
-data/
+data
 **/archived/
 logs/
 **/__pycache__/
