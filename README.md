@@ -1,4 +1,7 @@
 # Read Me File for PFISR Pulsating Aurora Energy Project
+
+The documentation and code in this repository relates to the analysis I did for: https://doi.org/10.3389/fspas.2022.1032552
+
 see document-struture.md for a layout of the project structure and where files are located
 you will need to create reports/figures/, logs/, and data/ directories as these are included in my .gitignore file.
 
